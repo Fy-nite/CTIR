@@ -1,0 +1,800 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ObjectIR.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ObjectIR.Core.Builder.IRBuilder">
+            <summary>
+            Fluent API for building IR modules
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Builder.ClassBuilder">
+            <summary>
+            Builder for class definitions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Builder.InterfaceBuilder">
+            <summary>
+            Builder for interface definitions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Builder.StructBuilder">
+            <summary>
+            Builder for struct definitions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Builder.FieldBuilder">
+            <summary>
+            Builder for field definitions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Builder.MethodBuilder">
+            <summary>
+            Builder for method definitions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Builder.InstructionBuilder">
+            <summary>
+            Builder for emitting instructions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ASTNode">
+            <summary>
+            Abstract base for AST nodes
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Program">
+            <summary>
+            Represents a Construct program
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ContractDeclaration">
+            <summary>
+            Represents a contract declaration
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.FunctionDeclaration">
+            <summary>
+            Represents a function declaration
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Parameter">
+            <summary>
+            Represents a function parameter
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.TypeAnnotation">
+            <summary>
+            Represents a type annotation
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Block">
+            <summary>
+            Represents a block of statements
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Statement">
+            <summary>
+            Base class for statements
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.VarDeclaration">
+            <summary>
+            Variable declaration statement
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ExpressionStatement">
+            <summary>
+            Expression statement
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.IfStatement">
+            <summary>
+            If statement
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.WhileStatement">
+            <summary>
+            While statement
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ReturnStatement">
+            <summary>
+            Return statement
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Expression">
+            <summary>
+            Base class for expressions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.NumberLiteral">
+            <summary>
+            Integer literal
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.StringLiteral">
+            <summary>
+            String literal
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.BooleanLiteral">
+            <summary>
+            Boolean literal
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Identifier">
+            <summary>
+            Identifier reference
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.BinaryOp">
+            <summary>
+            Binary operation
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.UnaryOp">
+            <summary>
+            Unary operation
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.FunctionCall">
+            <summary>
+            Function call
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.MemberAccess">
+            <summary>
+            Member access (e.g., IO.println)
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Assignment">
+            <summary>
+            Assignment expression
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ConstructCompiler">
+            <summary>
+            Compiles Construct language AST to ObjectIR modules
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ConstructLanguageCompiler">
+            <summary>
+            High-level Construct to ObjectIR compiler
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Compilers.ConstructLanguageCompiler.CompileSource(System.String)">
+            <summary>
+            Compiles Construct source code to an ObjectIR module
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Compilers.ConstructLanguageCompiler.CompileSourceToJson(System.String)">
+            <summary>
+            Compiles Construct source code and returns as JSON
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Compilers.ConstructLanguageCompiler.CompileSourceToText(System.String)">
+            <summary>
+            Compiles Construct source code and returns as text dump
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ConstructLexer">
+            <summary>
+            Tokenizes Construct language source code
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.TokenType">
+            <summary>
+            Token types for Construct language
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.Token">
+            <summary>
+            Represents a token
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Compilers.Token.#ctor(ObjectIR.Core.Compilers.TokenType,System.String,System.Int32,System.Int32)">
+            <summary>
+            Represents a token
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.CompileException">
+            <summary>
+            Compilation error
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Compilers.ConstructParser">
+            <summary>
+            Parses Construct language tokens into an AST
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Composition.DependencyResolver">
+            <summary>
+            Resolves type and method dependencies across modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.RegisterModule(ObjectIR.Core.IR.Module)">
+            <summary>
+            Registers a module for dependency resolution
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.ResolveType(ObjectIR.Core.IR.TypeReference)">
+            <summary>
+            Resolves a type reference to its definition across registered modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.ResolveMethod(ObjectIR.Core.IR.MethodReference)">
+            <summary>
+            Resolves a method reference to its definition across registered modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.GetDependencies(ObjectIR.Core.IR.TypeDefinition)">
+            <summary>
+            Gets all types that a given type depends on
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.GetDependents(ObjectIR.Core.IR.TypeDefinition)">
+            <summary>
+            Gets all types that depend on a given type
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.TopologicalSort">
+            <summary>
+            Topologically sorts types based on dependencies
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.DependencyResolver.FindCircularDependencies">
+            <summary>
+            Detects circular dependencies
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Composition.ModuleComposer">
+            <summary>
+            Represents a composition of multiple modules into a single unified module
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.AddModule(ObjectIR.Core.IR.Module)">
+            <summary>
+            Adds a module to the composition
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.GetModules">
+            <summary>
+            Gets all currently composed modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.Validate">
+            <summary>
+            Validates the composition for conflicts and missing dependencies
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.Compose(System.String,System.String)">
+            <summary>
+            Composes all modules into a single unified module
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.LinkNamespace(System.String,System.String,System.String)">
+            <summary>
+            Creates a link between two modules for namespace aliasing
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.GetDependencyGraph">
+            <summary>
+            Gets the dependency graph as an adjacency list
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Composition.ModuleComposer.GenerateReport">
+            <summary>
+            Generates a report of the composition
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Composition.CompositionValidation">
+            <summary>
+            Represents validation results for module composition
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.IfInstruction">
+            <summary>
+            Represents an if-else statement with condition and blocks
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.WhileInstruction">
+            <summary>
+            Represents a while loop with condition and body
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.TryInstruction">
+            <summary>
+            Represents a try-catch-finally block
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.CatchClause">
+            <summary>
+            Represents a catch clause in a try-catch block
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.ThrowInstruction">
+            <summary>
+            Represents a throw instruction
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.Condition">
+            <summary>
+            Base class for conditions in control flow
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.StackCondition">
+            <summary>
+            Condition that uses the top of the stack
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.BinaryCondition">
+            <summary>
+            Condition that compares two stack values
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.ExpressionCondition">
+            <summary>
+            Condition based on an expression
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.Instruction">
+            <summary>
+            Base class for all IR instructions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.IInstructionVisitor">
+            <summary>
+            Visitor pattern for traversing instructions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.InstructionList">
+            <summary>
+            List of instructions with helper methods
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.FieldDefinition">
+            <summary>
+            Represents a field in a class or struct
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.PropertyDefinition">
+            <summary>
+            Represents a property in a class or interface
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.EnumMember">
+            <summary>
+            Represents an enum member
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.GenericParameter">
+            <summary>
+            Represents a generic parameter
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.TypeConstraint">
+            <summary>
+            Represents a constraint on a generic parameter
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.MethodDefinition">
+            <summary>
+            Represents a method or function definition
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.FunctionDefinition">
+            <summary>
+            Represents a standalone function (not in a class)
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.Parameter">
+            <summary>
+            Represents a method parameter
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.LocalVariable">
+            <summary>
+            Represents a local variable in a method
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.MethodReference">
+            <summary>
+            Represents a reference to a method
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.FieldReference">
+            <summary>
+            Represents a reference to a field
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.Module">
+            <summary>
+            Represents a complete IR module containing types and functions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.OpCode">
+            <summary>
+            OpCodes for all instructions
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.TypeDefinition">
+            <summary>
+            Base class for all type definitions in the IR
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.ClassDefinition">
+            <summary>
+            Represents a class type
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.InterfaceDefinition">
+            <summary>
+            Represents an interface type
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.StructDefinition">
+            <summary>
+            Represents a struct (value type)
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.EnumDefinition">
+            <summary>
+            Represents an enum type
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.IR.TypeReference">
+            <summary>
+            Represents a reference to a type in the IR
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.AdvancedModuleFormats">
+            <summary>
+            Advanced serialization formats for module analysis and reporting
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.AdvancedModuleFormats.DumpToCSV(ObjectIR.Core.Serialization.ModuleData)">
+            <summary>
+            Dumps module as CSV format for spreadsheet analysis
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.AdvancedModuleFormats.DumpToMarkdown(ObjectIR.Core.Serialization.ModuleData)">
+            <summary>
+            Dumps module as markdown for documentation
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.AdvancedModuleFormats.DumpToYAML(ObjectIR.Core.Serialization.ModuleData)">
+            <summary>
+            Dumps module as YAML format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.AdvancedModuleFormats.GenerateSummaryReport(ObjectIR.Core.Serialization.ModuleData)">
+            <summary>
+            Generates a summary report of the module
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.BsonSerializer">
+            <summary>
+            Provides BSON serialization and deserialization for IR modules
+            BSON (Binary JSON) offers smaller file sizes compared to JSON
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.BsonSerializer.ModuleDataToBson(ObjectIR.Core.Serialization.ModuleData)">
+            <summary>
+            Converts ModuleData to a BSON document
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.BsonSerializer.BsonToModuleData(MongoDB.Bson.BsonDocument)">
+            <summary>
+            Converts a BSON document back to ModuleData
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.BsonSerializer.JsonNodeToBson(System.Text.Json.Nodes.JsonNode)">
+            <summary>
+            Converts a JsonNode to BSON - used for complex instruction data
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.BsonSerializer.BsonToJsonNode(MongoDB.Bson.BsonValue)">
+            <summary>
+            Converts BSON value back to JsonNode
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.InstructionSerializer">
+            <summary>
+            Serializes and deserializes IR instructions to/from JSON
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.InstructionSerializer.SerializeInstructions(ObjectIR.Core.IR.InstructionList)">
+            <summary>
+            Serializes a list of instructions to JSON array
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.InstructionSerializer.SerializeInstruction(ObjectIR.Core.IR.Instruction)">
+            <summary>
+            Serializes a single instruction to JSON
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.InstructionSerializer.DeserializeInstructions(System.Text.Json.JsonElement)">
+            <summary>
+            Deserializes a JSON array to instruction list
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.InstructionSerializer.DeserializeInstruction(System.Text.Json.JsonElement)">
+            <summary>
+            Deserializes a single instruction from JSON
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.ModuleLoader">
+            <summary>
+            Loads ObjectIR modules from text format and provides storage/caching capabilities
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadFromText(System.String)">
+            <summary>
+            Loads a module from text format (as shown in documentation)
+            </summary>
+            <example>
+            var textFormat = @"
+            module CalculatorApp
+            class Calculator {
+                field history: List&lt;int32&gt;
+                method Add(a: int32, b: int32) -&gt; int32 {
+                    ldarg a
+                    ldarg b
+                    add
+                    ret
+                }
+            }
+            ";
+            var loader = new ModuleLoader();
+            var module = loader.LoadFromText(textFormat);
+            </example>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadFromJson(System.String)">
+            <summary>
+            Loads a module from JSON format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadFromJsonFile(System.String)">
+            <summary>
+            Loads a module from a JSON file
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadFromTextFile(System.String)">
+            <summary>
+            Loads a module from text file format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.SaveToJsonFile(ObjectIR.Core.IR.Module,System.String,System.Boolean)">
+            <summary>
+            Saves a module to JSON file
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.SaveToTextFile(ObjectIR.Core.IR.Module,System.String)">
+            <summary>
+            Saves a module to text file format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadFromBson(System.Byte[])">
+            <summary>
+            Loads a module from BSON (binary JSON) format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadFromBsonFile(System.String)">
+            <summary>
+            Loads a module from a BSON file
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.SaveToBsonFile(ObjectIR.Core.IR.Module,System.String)">
+            <summary>
+            Saves a module to BSON file for smaller file size
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.GetCachedModule(System.String)">
+            <summary>
+            Gets a cached module by name
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.ClearCache">
+            <summary>
+            Clears the module cache
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.GetAllCachedModules">
+            <summary>
+            Gets all cached modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.LoadModulesFromDirectory(System.String,System.String)">
+            <summary>
+            Loads multiple module files from a directory
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleLoader.SaveModulesToDirectory(System.Collections.Generic.IEnumerable{ObjectIR.Core.IR.Module},System.String)">
+            <summary>
+            Saves multiple modules to a directory
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.ModuleSerializationExtensions">
+            <summary>
+            Extension methods for serializing IR modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.Serialize(ObjectIR.Core.IR.Module)">
+            <summary>
+            Creates a serializer for this module
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.Dump(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as a structured object representation
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpJson(ObjectIR.Core.IR.Module,System.Boolean)">
+            <summary>
+            Dumps the module as JSON string
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpText(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as human-readable text
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpBson(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as BSON (binary JSON) for smaller file sizes
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpFob(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as FOB (Finite Open Bytecode) binary format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpTypes(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module to an array of type descriptions
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpFunctions(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module to an array of function descriptions
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpCsv(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as CSV format for spreadsheet analysis
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpMarkdown(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as Markdown for documentation
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.DumpYaml(ObjectIR.Core.IR.Module)">
+            <summary>
+            Dumps the module as YAML format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.GenerateSummaryReport(ObjectIR.Core.IR.Module)">
+            <summary>
+            Generates a summary report of the module
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.LoadFromJson(ObjectIR.Core.IR.Module,System.String)">
+            <summary>
+            Loads a module from JSON string
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializationExtensions.LoadFromBson(ObjectIR.Core.IR.Module,System.Byte[])">
+            <summary>
+            Loads a module from BSON (binary JSON) data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.ModuleSerializer">
+            <summary>
+            Provides serialization and dumping capabilities for IR modules
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.Dump">
+            <summary>
+            Dumps the module as a structured object representation
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpToJson(System.Boolean)">
+            <summary>
+            Dumps the module as JSON string
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpToText">
+            <summary>
+            Dumps the module as human-readable text
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpToIRCode">
+            <summary>
+            Dumps the module as IR code (similar to assembly language)
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpTypes">
+            <summary>
+            Dumps the module to an array of type descriptions
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpFunctions">
+            <summary>
+            Dumps the module to an array of function descriptions
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.LoadFromJson(System.String)">
+            <summary>
+            Loads a module from JSON string
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.LoadModule(ObjectIR.Core.Serialization.ModuleData)">
+            <summary>
+            Loads a module from ModuleData
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpToFOB">
+            <summary>
+            Dumps the module as FOB (Finite Open Bytecode) binary format
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.DumpToBson">
+            <summary>
+            Dumps the module as BSON (binary JSON) for smaller file sizes
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.LoadFromBson(System.Byte[])">
+            <summary>
+            Loads a module from BSON data
+            </summary>
+        </member>
+        <member name="M:ObjectIR.Core.Serialization.ModuleSerializer.ToBson(ObjectIR.Core.IR.Module)">
+            <summary>
+            Converts a module to BSON format
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.ModuleData">
+            <summary>
+            Represents serialized module data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.TypeData">
+            <summary>
+            Represents serialized type data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.FieldData">
+            <summary>
+            Represents serialized field data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.PropertyData">
+            <summary>
+            Represents serialized property data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.MethodData">
+            <summary>
+            Represents serialized method data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.FunctionData">
+            <summary>
+            Represents serialized function data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.ParameterData">
+            <summary>
+            Represents serialized parameter data
+            </summary>
+        </member>
+        <member name="T:ObjectIR.Core.Serialization.LocalVariableData">
+            <summary>
+            Represents serialized local variable data
+            </summary>
+        </member>
+    </members>
+</doc>
