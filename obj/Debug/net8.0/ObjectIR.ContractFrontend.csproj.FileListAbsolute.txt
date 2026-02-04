@@ -1,6 +1,0 @@
-/run/media/charlie/the cat storage v2/ObjectIR/src/ObjectIR.ContractFrontend/obj/Debug/net8.0/ObjectIR.ContractFrontend.csproj.AssemblyReference.cache
-/run/media/charlie/the cat storage v2/ObjectIR/src/ObjectIR.ContractFrontend/obj/Debug/net8.0/ObjectIR.ContractFrontend.GeneratedMSBuildEditorConfig.editorconfig
-/run/media/charlie/the cat storage v2/ObjectIR/src/ObjectIR.ContractFrontend/obj/Debug/net8.0/ObjectIR.ContractFrontend.AssemblyInfoInputs.cache
-/run/media/charlie/the cat storage v2/ObjectIR/src/ObjectIR.ContractFrontend/obj/Debug/net8.0/ObjectIR.ContractFrontend.AssemblyInfo.cs
-/run/media/charlie/the cat storage v2/ObjectIR/src/ObjectIR.ContractFrontend/obj/Debug/net8.0/ObjectIR.ContractFrontend.csproj.CoreCompileInputs.cache
-/run/media/charlie/the cat storage v2/ObjectIR/src/ObjectIR.ContractFrontend/obj/Debug/net8.0/ObjectIR.ContractFrontend.sourcelink.json
